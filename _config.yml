@@ -10,7 +10,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #-------------------------------
 # About Section
 author-name:   Giovanni Fontana
-author-avatar: 09.jpg
+author-avatar: me-avatar.png
 
 
 #-------------------------------
@@ -42,6 +42,15 @@ mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.
 #-------------------------------
 # Build settings
 markdown: kramdown
+#kramdown:
+#  use_coderay: true
+
+#  coderay:
+#    coderay_line_numbers:
+#    coderay_tab_width: 2
+#    coderay_css: class
+highlighter: rouge
+
 permalink: ':title/'
 plugins:
   - jekyll-paginate

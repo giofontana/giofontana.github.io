@@ -4,9 +4,10 @@
 
 .highlight {
   background: $blue-black;
+  font-size: 12px;
 
   .highlighter-rouge & {
-    background: #eef;
+    background: #000;
   }
 
   .c     { color: #998; font-style: italic } // Comment
@@ -69,3 +70,4 @@
   .vi    { color: #008080 } // Name.Variable.Instance
   .il    { color: #099 } // Literal.Number.Integer.Long
 }
+

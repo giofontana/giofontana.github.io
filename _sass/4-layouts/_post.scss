@@ -197,6 +197,7 @@
 // MEDIA
 @media only screen and (min-width: 576px) {
   .post-content {
+    width:152%;
     padding: 40px;
   }
   .post-head {
@@ -226,6 +227,7 @@
     text-align: right;
   }
   .comments {
+    width:152%;    
     padding: 0 40px;
   }
 }

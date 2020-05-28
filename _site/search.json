@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to Restore All Masters in OpenShift 4.x",
+      "category" : "",
+      "tags"     : "OpenShift, Backup, and Restore",
+      "url"      : "/how-to-replace-all-masters-in-ocp-cluster/",
+      "date"     : "2020-05-26 18:05:55 -0300"
+    } ,
+  
+    {
       "title"    : "The most popular mistakes",
       "category" : "",
       "tags"     : "Lifehacks",
