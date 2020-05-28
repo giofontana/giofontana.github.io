@@ -21,7 +21,8 @@ minimal_mistakes_skin: dark
 search: true
 # Build settings
 markdown: kramdown
-remote_theme: jekyll-theme-cayman
+theme: jekyll-theme-cayman
+remote_theme: sujaykundu777/devlopr-jekyll
 #remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
