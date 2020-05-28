@@ -4,7 +4,7 @@
 title: A Cloud Journey | Giovanni Fontana
 description:  An enthusiast who loves working with Technology trying to share his thoughts and findings! By Giovanni Fontana
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://giofontana.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #-------------------------------
