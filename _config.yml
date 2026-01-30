@@ -1,10 +1,10 @@
-title: devlopr
-subtitle: A Portfolio Jekyll Theme Built for Developers
+title: Giovanni Fontana
+subtitle: Specialist Solution Architect
 description: >- # this means to ignore newlines until "baseurl:"
-  devlopr-jekyll is a beautiful Jekyll Theme Built For Developers, which is optimized for speed and readability.
+  Specialist Solution Architect at Red Hat | Red Hat Certified Architect (RHCA) | Author of “OpenShift Multi-Cluster Management Handbook”
 
-url: "" # the base hostname & protocol for your site, e.g. https://example.github.io
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://giofontana.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
+baseurl: "/" # the subpath of your site, e.g. /blog
 
 # Navigation
 urls:
@@ -16,36 +16,36 @@ urls:
       url: /blog
     - text: Gallery
       url: /gallery
-    - text: Shop
-      url : /shop
-    - text: Contact
-      url : /contact
+#    - text: Shop
+#      url : /shop
+#    - text: Contact
+#      url : /contact
 
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
-author_logo: profile.png
-author: John Doe
-author_bio: Hi, my name is John Doe. I built this site using devlopr-jekyll :D
-author_email: "mail@sujaykundu.com"
-author_location: India
-author_website_url: "https://sujaykundu.com"
-typewrite-text: devlopr is a jekyll framework built for developers. You can edit this in _config.yml file
+author_logo: profile.jpeg
+author: Giovanni Fontana
+author_bio: Hi, my name is Giovanni. I am a Specialist Solution Architect, Red Hat Certified Architect (RHCA) and author of “OpenShift Multi-Cluster Management Handbook”.
+author_email: ""
+author_location: Westford, MA, USA
+author_website_url: "https://giofontana.github.io"
+typewrite-text: Specialist Solution Architect | Red Hat Certified Architect (RHCA) | Author of “OpenShift Multi-Cluster Management Handbook”
 hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
 # Experiences
 author_work_experiences:
-            - company_name: Google
-              company_logo: google.png
-              company_url: https://google.com
-              designation: Software Engineer
-              description: Worked on various Google Products
+            - company_name: Red Hat
+              company_logo: redhat.png
+              company_url: https://redhat.com
+              designation: Specialist Solution Architect
+              description: Support customers in the US Northeast region to understand how Red Hat’s solutions will give them a competitive advantage and help them achieve their business objectives.
               visibility: true
-            - company_name: Microsoft
-              company_logo: microsoft.png
-              company_url: https://microsoft.com
-              designation: Azure Developer
-              description: Worked on various Azure Cloud Products
+            - company_name: Hewlett Packard Enterprise
+              company_logo: hpe.jpeg
+              company_url: https://www.hpe.com/
+              designation: Cloud & DevOps Solution Architect
+              description: Assisted customers to achieve best results conducting DevOps processes assessment, design of continuous integration and delivery processes, integrating tools from different vendors.
               visibility: true
 
 # Education
@@ -59,23 +59,26 @@ author_education_details:
 
 # Projects
 author_project_details:
-              - project_thumbnail: gamershub.png
-                project_title: Gamers Hub
-                project_description: A Platform built for Gamers and Game Devs
-                project_url: https://gamershub.in
+              - project_thumbnail: book2.jpg
+                project_title: "OpenShift Multi-Cluster Management Handbook: Go from architecture to pipelines using GitOps"
+                project_description: |
+                  Discover best practices for designing and scaling robust OpenShift clusters' architecture for different workloads.
+                  Manage multiple clusters on-premise or in the cloud using multi-cluster management tools to keep them secure and compliant.
+                  Implement multi-cluster CI/CD on OpenShift using GitOps.
+                project_url: https://www.amazon.com/dp/1803235284
                 visibility: true
               - project_thumbnail: hack4r.PNG
                 project_title: Hack4r
                 project_description: A Platform built for Hackers and Penetration Testers
                 project_url: https://hack4r.com
-                visibility: true
+                visibility: false
 
 # social links
-twitter_username: xplor4r
-github_username:  sujaykundu777
-instagram_username: xplor4r
+#twitter_username: xplor4r
+github_username:  giofontana
+# instagram_username: xplor4r
 # facebook_username: johndoe
-# linkedin_username: johndoe
+linkedin_username: gfontana
 # behance_username: johndoe
 # medium_username: johndoe
 # telegram_username: johndoe
@@ -88,14 +91,14 @@ instagram_username: xplor4r
 # hyvor_talk_website_id: 476
 
 # wakatime username (coding activity)
-wakatime_username: sujaykundu777
+# wakatime_username: sujaykundu777
 
 # mailchimp embedded form url (newsletter):
-mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
+# mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
 
 # contact form - (choose formspress or getform)
 # getform_endpoint: 83b703c3-9e47-4df4-ac55-e24d7eb02abc
-formspree_email: johndoe@gmail.com
+# formspree_email: johndoe@gmail.com
 
 # releases - widget can be (sidebar, modal or embed)
 olvy_organization: devlopr
