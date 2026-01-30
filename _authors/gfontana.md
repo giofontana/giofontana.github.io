@@ -1,0 +1,13 @@
+---
+name: Giovanni Fontana
+username: gfontana
+site: http://giofontana.github.io
+avatar: gfontana.png
+bio: "Hi, my name is Giovanni. I am a Specialist Solution Architect, Red Hat Certified Architect (RHCA) and author of “OpenShift Multi-Cluster Management Handbook”."
+email: mail@johndoe.com
+social:
+   - title: "github"
+     url: "https://github.com/giofontana"
+   - title: "linkedin"
+     url: "https://www.linkedin.com/in/gfontana"
+---
