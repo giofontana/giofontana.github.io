@@ -1,7 +1,7 @@
 ---
 layout: page
 title: OpenTelemetry
-permalink: /blog/categories/opentelemetry/
+permalink: /blog/categories/OpenTelemetry/
 ---
 
 <h5> Posts by Category : {{ page.title }} </h5>

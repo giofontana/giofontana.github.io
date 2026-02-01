@@ -1,7 +1,7 @@
 ---
 layout: page
 title: OpenShift
-permalink: /blog/categories/openshift/
+permalink: /blog/categories/OpenShift/
 ---
 
 <h5> Posts by Category : {{ page.title }} </h5>

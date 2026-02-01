@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Observability
-permalink: /blog/categories/observability/
+permalink: /blog/categories/Observability/
 ---
 
 <h5> Posts by Category : {{ page.title }} </h5>
