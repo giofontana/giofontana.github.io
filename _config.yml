@@ -14,8 +14,8 @@ urls:
       url: /about
     - text: Blog
       url: /blog
-    - text: Gallery
-      url: /gallery
+#    - text: Gallery
+#      url: /gallery
 #    - text: Shop
 #      url : /shop
 #    - text: Contact
@@ -26,7 +26,7 @@ urls:
 
 author_logo: profile.jpeg
 author: Giovanni Fontana
-author_bio: Hi, my name is Giovanni. I am a Specialist Solution Architect, Red Hat Certified Architect (RHCA) and author of “OpenShift Multi-Cluster Management Handbook”.
+author_bio: "Specialist Solution Architect at Red Hat North America. Red Hat Certified Architect (RHCA) and author of the \"OpenShift Multi-Cluster Management Handbook\" (Packt, 2022). <br> Check out my book on Amazon: <a href=\"https://www.amazon.com/OpenShift-Multi-Cluster-Management-Handbook-architecture/dp/1803235284\" target=\"_blank\">OpenShift Multi-Cluster Management Handbook</a>."
 author_email: ""
 author_location: Westford, MA, USA
 author_website_url: "https://giofontana.github.io"
@@ -47,15 +47,39 @@ author_work_experiences:
               designation: Cloud & DevOps Solution Architect
               description: Assisted customers to achieve best results conducting DevOps processes assessment, design of continuous integration and delivery processes, integrating tools from different vendors.
               visibility: true
+            - company_name: Wipro
+              company_logo: wipro.jpeg
+              company_url: https://www.wipro.com/
+              designation: Lead Consultant
+              description: Responsible to lead test automation practice at Wipro in Brazil
+              visibility: true       
+            - company_name: Accenture
+              company_logo: accenture.jpeg
+              company_url: https://www.accenture.com/
+              designation: System Analyst
+              description: New development and maintenance of large scale Java EE applications.
+              visibility: true                      
 
 # Education
 author_education_details:
               - college_logo: mit.png
-                college_name: MIT
-                college_url: https://mit.org
-                college_degree: CS Engineer
-                description: Bachelor of Technology
+                college_name: MIT Professional Education
+                college_url: https://professionalprogramsmit.com/
+                college_degree: "Applied Agentic AI for Organizational Transformation (in progress)"
+                description: Artificial Intelligence, Large Language Models, Generative AI, Agentic AI
                 visibility: true
+              - college_logo: mit.png
+                college_name: MIT Professional Education
+                college_url: https://professionalprogramsmit.com/
+                college_degree: "Applied Data Science Program: Leveraging AI for Effective Decision-Making"
+                description: Artificial Intelligence, Machine Learning, Data Science, Deep Learning, NLP, Computer Vision
+                visibility: true
+              - college_logo: uspoficial_logo.jpeg
+                college_name: USP
+                college_url: https://www.usp.br/
+                college_degree: Bachelor, Computer Science
+                description: Bachelor of Computer Science
+                visibility: true                
 
 # Projects
 author_project_details:
