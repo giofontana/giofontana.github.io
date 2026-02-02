@@ -4,8 +4,8 @@ title:  "Automate VM golden image builds for OpenShift with Packer"
 summary:  "In any virtualized environment, maintaining consistency across virtual machines (VMs) is a major challenge. Golden images(pre-configured VM templates) are the industry-standard solution. They ensure every new VM comes with the correct OS settings, security patches, and monitoring tools baked in. But how do you create and manage these images without tedious manual work?"
 date:   '2025-11-07 00:05:55 +0300'
 thumbnail:  /assets/img/posts/2020-11-07-automate-vm-golden-image-openshift-virt-packer/banner.jpg
-keywords:   ['OpenShift', 'Packer', 'Kubevirt']
-category:   ['OpenShift', 'Packer', 'Kubevirt']
+keywords:   ['Kubevirt', 'OpenShift', 'Packer']
+category:   ['Kubevirt', 'OpenShift', 'Packer']
 author: gfontana
 lang: en
 lang-ref: automate-vm-golden-image-openshift-virt-packer

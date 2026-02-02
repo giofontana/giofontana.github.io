@@ -4,8 +4,8 @@ title:  "Effective observability with Red Hat build of OpenTelemetry | Red Hat D
 summary:  "OpenTelemetry is an open source project under the Cloud Native Computing Foundation (CNCF) that provides a set of APIs, libraries, agents, and collectors to capture distributed traces, metrics, and logs. Red Hat build of OpenTelemetry is a distribution of the upstream OpenTelemetry project, built and supported by Red Hat."
 date:   '2025-09-03 00:05:55 +0300'
 thumbnail:  /assets/img/posts/2025-09-03-effective-observability/figure_3_5.png
-category: ['OpenShift','Observability','OpenTelemetry']
-keywords:   ['OpenShift', 'Observability', 'OpenTelemetry']
+category: ['Observability','OpenShift','OpenTelemetry']
+keywords:   ['Observability', 'OpenShift', 'OpenTelemetry']
 author: gfontana
 lang: en
 lang-ref: 2025-09-03-effective-observability
