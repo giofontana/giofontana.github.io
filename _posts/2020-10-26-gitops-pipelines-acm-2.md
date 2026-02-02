@@ -3,7 +3,7 @@ layout: post
 title:  "GitOps Using Red Hat OpenShift Pipelines (Tekton) and Red Hat Advanced Cluster Management"
 summary:  "Recently, Red Hat launched the Advanced Cluster Management tool, which aims to help organizations overcome the challenges of having applications deployed in multiple clusters and clouds. Red Hat is also actively collaborating with the Tekton project as the solution that will enable teams to build Kubernetes-style delivery pipelines that can fully control and own the complete life cycle of their microservices without having to rely on central teams to maintain and manage a CI server, plugins, and its configurations. <br>In the last article we saw how to use Tekton and Red Hat Advanced Cluster Management to deploy an application on multiple namespaces, one for each lifecycle environment (Dev, QA and Prod), using a single OpenShift managed cluster. In this article we are going to expand our use case to deploy that same application using three different clusters, one for Non-Production workloads, another for Production and a last one representing a DR (Disaster Recovery) cluster."
 date:   '2020-10-26 00:05:55 +0300'
-thumbnail:  /assets/img/posts/2020-10-26-gitops-pipelines-acm-2/title.jpeg
+thumbnail:  /assets/img/posts/2020-09-04-gitops-pipelines-acm-2/title.png
 keywords:   ['ACM', 'OpenShift', 'Tekton', 'GitOps']
 category:   ['ACM', 'OpenShift', 'Tekton', 'GitOps']
 author: gfontana
@@ -106,4 +106,4 @@ Conclusion
 
 In this article, we improved the application deployment to simulate a more real world scenario using RH ACM and Tekton: Deploy of Dev and QA version of an application in a NON-PRODUCTION cluster and deploy of the Production version in two different clusters (PROD and DR) at the same time. We also saw that, by using RH ACM, we “decouple” the deployment logic from the pipeline and we were able to change the deployment targets by only changing the PlacementRule objects and no changes were needed on the Tekton side.
 
-What did you think? Interesting, right? If you are interested in knowing more about OpenShift Pipelines and Red Hat Advanced Cluster Management for Kubernetes talk to a Red Hatter by filling [this form](https://www.redhat.com/en/technologies/management/advanced-cluster-management#contact-form) or talking to your Red Hat representative. You can also see more about it on the [Red Hat Videos YouTube channel](https://www.youtube.com/watch?v=gKw-bJGYTQw).
+What did you think? Interesting, right? If you are interested in knowing more about OpenShift Pipelines and Red Hat Advanced Cluster Management for Kubernetes talk to a Red Hatter by filling [this form](https://www.redhat.com/en/technologies/management/advanced-cluster-management#contact-form) or talking to your Red Hat representative. You can also see more about it on the [Red Hat Videos YouTube channel](https://www.youtube.com/watch?v=gKw-bJGYTQw).  
