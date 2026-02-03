@@ -1,9 +1,20 @@
 
-            {% for tag in site.categories %} {% capture tag_name %}{{ tag | first }}{% endcapture %}
-            <div id="#{{ tag_name | slugize }}"></div>
-            <li class="tag-head">
-                <a href="{{ site.baseurl }}/blog/categories/{{ tag_name }}">{{ tag_name }}</a>
-            </li>
-            <a name="{{ tag_name | slugize }}"></a>
+                        {% comment %} Build a sorted list of category names, then iterate it alphabetically. {% endcomment %}
+                        {% assign tag_names = "" %}
+                        {% for tag in site.categories %}
+                            {% capture name %}{{ tag | first }}{% endcapture %}
+                            {% if forloop.first %}
+                                {% assign tag_names = name %}
+                            {% else %}
+                                {% assign tag_names = tag_names | append: "|" | append: name %}
+                            {% endif %}
+                        {% endfor %}
+                        {% assign tag_names = tag_names | split: "|" | sort %}
 
-            {% endfor %}
+                        {% for tag_name in tag_names %}
+                        <div id="#{{ tag_name | slugize }}"></div>
+                        <li class="tag-head">
+                                <a href="{{ site.baseurl }}/blog/categories/{{ tag_name }}">{{ tag_name }}</a>
+                        </li>
+                        <a name="{{ tag_name | slugize }}"></a>
+                        {% endfor %}
