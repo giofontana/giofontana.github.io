@@ -2,7 +2,7 @@
 layout: post
 title:  "Nothing is permanent except change!"
 summary:  "This quote, attributed to Heraclites, Greek philosopher who innovated in his time declaring that the world and nature are in constant movement and nothing is static, everything moves and changes, also author of the proverb “no man ever steps in the same river twice”, which refers to how neither are the same as they were before — made me consider the number of changes that my family and I experienced this year.… uhhh, what a year so far! For my family and I, everything has changed: my home, my country, new friends, new routines! Everything is brand new again!"
-date:   '2022-11-11 00:05:55 +0300'
+date:   '2022-10-18 00:05:55 +0300'
 thumbnail:  /assets/img/posts/2022-10-18-nothing-is-permanent/title.webp
 keywords:   ['My Life']
 category:   ['My Life']

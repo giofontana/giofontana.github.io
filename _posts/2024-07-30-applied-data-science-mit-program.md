@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Applied Data Science Program: Levaraging AI for Effective Decision Making"
-date:   '2022-11-11 00:05:55 +0300'
+date:   '2024-07-30 00:05:55 +0300'
 thumbnail:  /assets/img/posts/2024-07-30-applied-data-science-mit-program/title.png
 keywords:   ['Artificial Inteligence', 'Machine Learning']
 category:   ['Artificial Inteligence']

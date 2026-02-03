@@ -2,7 +2,7 @@
 layout: post
 title:  "Deploying a Private OpenShift Cluster on AWS using Transit Gateway"
 summary:  "AWS Transit Gateway is a service introduced in 2018 by AWS to facilitate the interconnection configuration between multiple VPCs and on-premises networks. In this article, we will build an environment from scratch on AWS with numerous VPCs, use Transit Gateway to interconnect them, and deploy a private Red Hat OpenShift on AWS (ROSA) cluster, which uses PrivateLink to enable communication between the Red Hat SREs and the private subnets on AWS."
-date:   '2025-09-03 00:05:55 +0300'
+date:   '2022-08-31 00:05:55 +0300'
 thumbnail:  /assets/img/posts/2022-08-31-rosa-transit-gateway/05.png
 category: ['OpenShift','AWS']
 keywords:   ['OpenShift', 'AWS']

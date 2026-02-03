@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Restore All Masters in OpenShift 4.x"
 summary:  "In this article I am going to show how to restore all masters servers, in case you need to restore your cluster of masters and etcds."
-date:   '2020-05-27 00:05:55 +0300'
+date:   '2020-05-28 00:05:55 +0300'
 thumbnail:  /assets/img/posts/2020-05-28-how-to-replace-all-masters-in-ocp-cluster/restauracao.jpg
 keywords:   ['OpenShift', 'Backup', 'Restore', 'Data Protection']
 category:   ['OpenShift']
