@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Observability
-permalink: /blog/categories/Observability/
+title: Artificial Inteligence
+permalink: /blog/categories/Artificial%20Inteligence/
 ---
 
 <h5> Posts by Category : {{ page.title }} </h5>
