@@ -31,7 +31,7 @@ author_email: ""
 author_location: Westford, MA, USA
 author_website_url: "https://giofontana.github.io"
 typewrite-text: Specialist Solution Architect | Red Hat Certified Architect (RHCA) | Author of “OpenShift Multi-Cluster Management Handbook”
-hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
+hero_cover_img: banner-v2.jpeg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
 # Experiences
 author_work_experiences:
@@ -91,11 +91,6 @@ author_project_details:
                   Implement multi-cluster CI/CD on OpenShift using GitOps.
                 project_url: https://www.amazon.com/dp/1803235284
                 visibility: true
-              - project_thumbnail: hack4r.PNG
-                project_title: Hack4r
-                project_description: A Platform built for Hackers and Penetration Testers
-                project_url: https://hack4r.com
-                visibility: false
 
 # social links
 #twitter_username: xplor4r
