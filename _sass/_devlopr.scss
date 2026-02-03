@@ -228,6 +228,11 @@ header {
     background-color: var(--card-background-color) !important;
 }
 
+.card-body {
+    font-size: 1.125rem; /* ~18px */
+    line-height: 1.6;
+}
+
 #topNav{
     padding-left: 15%;
     padding-right: 15%;
