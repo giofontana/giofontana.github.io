@@ -5,7 +5,7 @@ summary:  "For a long time, Red Hat has been establishing Linux as the main oper
 date:   '2021-06-28 00:05:55 +0300'
 thumbnail:  /assets/img/posts/2021-06-28-windows-container-openshift/title.png
 keywords:   ['OpenShift', 'Windows']
-category:   ['OpenShift', 'Windows']
+category:   ['OpenShift']
 author: gfontana
 lang: en
 lang-ref: 2021-06-28-windows-container-openshift
