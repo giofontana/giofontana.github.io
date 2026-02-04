@@ -83,15 +83,23 @@ author_education_details:
 
 # Projects
 author_project_details:
+              - project_title: Applied Agentic AI for Organizational Transformation (in progress)
+                project_thumbnail: mit.png
+                project_description: |
+                  Learning how to leverage agentic AI to drive organizational transformation and innovation. <br>
+                  <b>MIT Professional Education</b> <br>
+                  <i>Expected completion: March, 2026</i>.
+                project_url: https://professionalprogramsmit.com/
+                visibility: true
               - project_thumbnail: book2.jpg
                 project_title: "OpenShift Multi-Cluster Management Handbook: Go from architecture to pipelines using GitOps"
                 project_description: |
                   Discover best practices for designing and scaling robust OpenShift clusters' architecture for different workloads.
                   Manage multiple clusters on-premise or in the cloud using multi-cluster management tools to keep them secure and compliant.
-                  Implement multi-cluster CI/CD on OpenShift using GitOps.
+                  Implement multi-cluster CI/CD on OpenShift using GitOps. <br> 
+                  <i>Published by Packt in November, 2022</i>.
                 project_url: https://www.amazon.com/dp/1803235284
                 visibility: true
-
 # social links
 #twitter_username: xplor4r
 github_username:  giofontana
