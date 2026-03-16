@@ -21,6 +21,8 @@ urls:
 #    - text: Contact
 #      url : /contact
 
+# Google Analytics
+google_analytics: G-B83HXXT403  # Replace with your actual Measurement ID
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
