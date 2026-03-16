@@ -12,7 +12,7 @@ lang-ref: automating-openshift-certificates-claude-code
 permalink: /blog/2026-03-16-automating-openshift-certificates-with-claude-code/
 ---
 
-## The 6 AM Wake-Up Call
+## Ruining My First Coffee!
 
 Nothing ruins a peaceful morning quite like a certificate expiration. There I was, coffee in hand, when I noticed certificate alerts for many of the apps running in my lab. My thoughts:
 
@@ -46,7 +46,7 @@ Claude Code helped me:
 - Update the SealedSecret manifest in my GitOps repository
 - Verify the deployment through Argo CD
 
-**Time saved:** What normally took me 30-60 minutes of manual steps was reduced to no more than 10 minutes (well, honestly it took basically 1 or 2 minutes of my time, the rest was observing Claude to do it and approving execution of codes and commands).
+**Time saved:** What normally took me 20-30 minutes of manual steps was reduced to no more than 10 minutes (well, honestly it took basically 1 or 2 minutes of my time, the rest was observing Claude to do it and approving execution of codes and commands).
 
 But as I watched Argo CD sync the new certificate, I knew this was just postponing the inevitable. In 90 days, I'd be back here doing the same thing. It was time to automate.
 
