@@ -3,7 +3,7 @@ layout: post
 title: "Cert expired again! How I quickly renewed my OpenShift cluster's certificate and automated renewals with Claude Code!"
 summary: "How I used Claude Code to transform OpenShift certificate management from tedious 90-day manual renewals to fully automated GitOps-driven renewals in a single morning"
 date: '2026-03-16 01:00:00 +0000'
-thumbnail: /assets/img/posts/2026-03-16-automating-openshift-certificates/title.png
+thumbnail: /assets/img/posts/2026-03-16-automating-openshift-certificates-with-claude-code/title.png
 keywords: ['openshift', 'claude-code', 'ai-pair-programming', 'cert-manager', 'gitops', 'argocd', 'automation', 'devops', 'kubernetes', 'letsencrypt']
 category: ['OpenShift', 'DevOps', 'AI', 'GitOps']
 author: gfontana
