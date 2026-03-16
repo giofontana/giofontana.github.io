@@ -2,7 +2,7 @@
 layout: post
 title: "Cert expired again! How I quickly renewed my OpenShift cluster's certificate and automated renewals with Claude Code!"
 summary: "How I used Claude Code to transform OpenShift certificate management from tedious 90-day manual renewals to fully automated GitOps-driven renewals in a single morning"
-date: '2026-03-16 14:00:00 +0000'
+date: '2026-03-16 01:00:00 +0000'
 thumbnail: /assets/img/posts/2026-03-16-automating-openshift-certificates/header.png
 keywords: ['openshift', 'claude-code', 'ai-pair-programming', 'cert-manager', 'gitops', 'argocd', 'automation', 'devops', 'kubernetes', 'letsencrypt']
 category: ['OpenShift', 'DevOps', 'AI', 'GitOps']
@@ -14,14 +14,14 @@ permalink: /blog/2026-03-16-automating-openshift-certificates-with-claude-code/
 
 ## The 6 AM Wake-Up Call
 
-Nothing ruins a peaceful morning quite like a certificate expiration. There I was, coffee in hand, when I noticed many of the apps that run in my lab with certificate alerts. My thoughts:
+Nothing ruins a peaceful morning quite like a certificate expiration. There I was, coffee in hand, when I noticed certificate alerts for many of the apps running in my lab. My thoughts:
 
 - "Ouch, I forgot to renew it again!"
-- "I have an important meeting tomorrow, I may need this env running properly"
-- "I will have meetings until 11am, can't do it before it..."
+- "I have an important meeting tomorrow, I may need this environment running properly"
+- "I will have meetings until 11am, can't do it before then..."
 - "Wait, I do have Claude Code now... what if I ask it to do it for me?!"
 
-This article is my descripton of how that experience was! 
+Here's how it all went down! 
 
 For the past year, I'd been managing this certificate manually through a tedious process:
 1. SSH into a remote server to request new certificates from Let's Encrypt
@@ -46,21 +46,21 @@ Claude Code helped me:
 - Update the SealedSecret manifest in my GitOps repository
 - Verify the deployment through Argo CD
 
-**Time saved:** What normally took me 30-60 minutes of manual steps was reduced to no more than 10 minutes (well, honestly it took basically 1 or 2 minutes from my time, the rest was observing Claude to do it and approving execution of codes and commands).
+**Time saved:** What normally took me 30-60 minutes of manual steps was reduced to no more than 10 minutes (well, honestly it took basically 1 or 2 minutes of my time, the rest was observing Claude to do it and approving execution of codes and commands).
 
 But as I watched Argo CD sync the new certificate, I knew this was just postponing the inevitable. In 90 days, I'd be back here doing the same thing. It was time to automate.
 
 ## Act 2: The Automation Decision
 
 Over my second coffee, I outlined what I needed:
-- **Automatic certificate renewal**: Use cert-manger to automatically renew OpenShift Default Ingress certificate.
+- **Automatic certificate renewal**: Use cert-manager to automatically renew OpenShift Default Ingress certificate.
 - **GitOps-native**: Everything managed declaratively through Argo CD.
 - **Let's Encrypt integration**: Continue using free, trusted certificates.
 - **DNS-01 challenge**: For wildcard certificates with Cloudflare DNS.
 
 I told Claude Code: `Now, can you read the repo at <folder for my gitops manifests> and suggest changes to be able to use cert-manager to auto renew default ingress cert? cert-manager operator needs to be installed and configure through GitOps (Argo CD)`
 
-What followed was one of a impressive demonstration of how helpful Claude can be to automate repetitive tasks very quickly.
+What followed was an impressive demonstration of how helpful Claude can be to automate repetitive tasks very quickly.
 
 ![The first prompt](/assets/img/posts/2026-03-16-automating-openshift-certificates-with-claude-code/01.png)
 
@@ -71,16 +71,16 @@ What followed was one of a impressive demonstration of how helpful Claude can be
 Claude Code immediately understood my GitOps repository structure:
 - **Repository:** [gitops-ocp-infra](https://github.com/giofontana/gitops-ocp-infra)
 - **Pattern:** Cluster-specific configurations with shared operator bases
-- **Target:** simpsons cluster at `*.apps.simpsons.lab.gfontana.me` (Curious why this cluster is named "Simpsons"? Check the reason in the footnote of this article).
+- **Target:** simpsons cluster at `*.apps.simpsons.lab.gfontana.me` (Curious why this cluster is named "Simpsons"? Check the reason in the end of this article).
 - **GitOps Engine:** Argo CD managing all cluster resources
 
 ### Phase 1: Leveraging my current GitOps standards
 
 Instead of creating operator manifests from scratch, Claude Code recognized the pattern I use for GitOps and suggested the implementation of cert-manager following the same pattern.
 
-My GitOps follows a layered based approach, in which I sepparate shared operators and manifests from cluster specific configurations. I also use an Aggregation layer and App-of-Apps to bootstrap all apps. It is not a simple framework, it took me very long time to develop it and Claude was able to understand it in a matter of seconds. I will publish an article specifically about the way I structure and use GitOps some time, stay tunned!
+My GitOps follows a layered based approach, in which I separate shared operators and manifests from cluster specific configurations. I also use an Aggregation layer and App-of-Apps to bootstrap all apps. It is not a simple framework, it took me a very long time to develop it and Claude was able to understand it in a matter of seconds. I am planning to publish an article specifically about the way I structure and use GitOps, stay tuned!
 
-One thing that Claude wasn't able to detect initially was how I re-use manifests from `gitops-catalog`. Initially it created all manfiests to deploy cert-manager operator (`OperatorGroup`, `Subscription`, etc.). I had to ask Claude the following:
+One thing that Claude wasn't able to detect initially was how I re-use manifests from `gitops-catalog`. Initially it created all manifests to deploy cert-manager operator (`OperatorGroup`, `Subscription`, etc.). I had to ask Claude the following:
 
 ![A quick addition](/assets/img/posts/2026-03-16-automating-openshift-certificates-with-claude-code/02.png)
 
@@ -138,11 +138,11 @@ spec:
 
 ### Phase 3: Certificate Resource Definition
 
-Here's where things got interesting. Claude Code initially created a Certificate resource that looked correct. We deployed it, watched the logs, and... **error**.
+Here's where things got interesting. Claude Code initially created the Certificate resource. We deployed it, watched the logs, and... **error**.
 
 ### The commonName Bug Fix
 
-I messed up! Claude correctly set the `commonName` and `dnsNames`. However, I changed to add some other alias and mistakenly removed `gfontana.me` from `dnsNames`, which caused the certificate request to fail with a validation error.
+I messed it up! Claude correctly set the `commonName` and `dnsNames`. However, I changed it to add some other aliases and mistakenly removed `gfontana.me` from `dnsNames`, which caused the certificate request to fail with a validation error.
 
 **File:** [`gitops/manifests/clusters/simpsons/configuration/cert-manager-certs/certificate-wildcard-ingress.yaml`](https://github.com/giofontana/gitops-ocp-infra/blob/main/gitops/manifests/clusters/simpsons/configuration/cert-manager-certs/certificate-wildcard-ingress.yaml)
 
@@ -159,7 +159,7 @@ spec:
     kind: ClusterIssuer
   commonName: "gfontana.me"
   dnsNames:
-  - "gfontana.me" # I REMOVED THIS LINE!
+  - "gfontana.me"  # <-- This line was missing, causing the error
   - "*.gfontana.me"
   - "*.simpsons.lab.gfontana.me"
   - "*.apps.simpsons.lab.gfontana.me"
@@ -170,7 +170,7 @@ spec:
   renewBefore: 720h  # Renew 30 days before expiry
 ```
 
- Claude Code not only identified the failure, but also fixed it and asked my permission:
+Claude Code not only identified the failure, but also fixed it and asked my permission:
 
 ![Claude troubleshooting](/assets/img/posts/2026-03-16-automating-openshift-certificates-with-claude-code/03.png)
 
@@ -212,7 +212,7 @@ This job runs automatically after Argo CD syncs, ensuring the IngressController 
 
 ### Phase 5: Argo CD Application Definitions
 
-Finally, Claude Code created the Argo CD Application resources to manage everything. My initial thinking was to have only a single Argo CD Application for it, however Claude created two, the first for the operator itself and second for ingress certificate - which makes a lot of sense and even better than I thought initially!
+Finally, Claude Code created the Argo CD Application resources to manage everything. My initial thinking was to have only a single Argo CD Application for it. However, Claude created two, the first for the operator itself and second for ingress certificate - which makes a lot of sense and even better than I thought initially!
 
 **cert-manager Application (Wave 1):**
 ```yaml
@@ -291,16 +291,16 @@ issuer=C = US, O = Let's Encrypt, CN = R12
 This wasn't just about saving time—it was about the quality of the collaboration. Here's what impressed me:
 
 ### 1. Pattern Recognition
-Claude Code immediately understood my GitOps repository structure and suggested using the existing `gitops-catalog` instead of creating duplicate manifests. This kind of contextual awareness is exactly what you want in a pair programming partner.
+Claude Code immediately understood my GitOps repository structure and created all the new manifests following it. This kind of contextual awareness is exactly what you want in a pair programming partner.
 
 ### 2. Real-Time Debugging
-When the certificate request failed due to the missing `dnsNames`, Claude Code:
+When the certificate request failed due to the missing `gfontana.me` entry in `dnsNames`, Claude Code:
 - Analyzed the error logs
 - Identified the root cause
 - Proposed the fix
 - Implemented it immediately
 
-No searching Stack Overflow. No reading through cert-manager documentation for 30 minutes.
+No googling, or searching Stack Overflow. No reading through cert-manager documentation for 30 minutes.
 
 ### 3. Best Practices Built-In
 - Sync waves for proper resource ordering
@@ -330,25 +330,25 @@ When initial approaches didn't work, Claude Code didn't retry the same commands.
 To end my engagement with Claude in the best way I asked it the following:
 
 ```
-Now use all the procedure executed here and write an article about how I used claude code this morning to quickly renew OpenShift certifactes for my lab and also deployed cert-manager and configure it with Argo CD to auto renew the certificates. Write an article in my github pages at: <my github pages>
+Now use all the procedure executed here and write an article about how I used Claude Code this morning to quickly renew OpenShift certificates for my lab and also deployed cert-manager and configure it with Argo CD to auto renew the certificates. Write an article in my github pages at: <my github pages>
 ```
 
-It learned my GitHub pages structure and wrote a big part of this article for me. I just had to review, put my own words and style here and here we go, a new blog post ready!
+It learned my GitHub pages structure and wrote a big part of this article for me. I just had to review it, add my personal touch and style, and voilà—a new blog post ready to publish!
 
 ## Conclusion: A Morning Well Spent
 
-What started as a frustrating certificate expiration alert turned into a complete automation nice experience. With Claude Code as my AI pair programming partner, I:
+What started as a frustrating certificate expiration alert turned into a nice experimentation experience with Claude Code. With Claude Code as my AI pair programming partner, I:
 
 - **Quickly renewed** an expiring certificate in minutes instead of hours
 - **Deployed cert-manager** using GitOps best practices
-- **Automated renewals** from 90-day manual to 60-day automatic
+- **Automated renewals**: certificates now auto-renew 30 days before expiration
 - **Eliminated toil** and saved a few hours annually
 - **Learned patterns** I can apply to other infrastructure automation
 - **Shared my experience** by writing this article
 
 The real revelation wasn't just the time saved—it was the quality of the collaboration. Claude Code understood my environment, adapted to my patterns, debugged issues in real-time, and applied best practices throughout.
 
-What about you? Are you using Claude and other AIs to make your life easier and automate repetitive tasks? Share your thoughts!
+What about you? Are you using AI assistants like Claude Code to automate repetitive tasks? Share your thoughts! I'd love to hear your experiences!
 
 ---
 
@@ -359,12 +359,8 @@ What about you? Are you using Claude and other AIs to make your life easier and 
 - **Claude Code:** [Anthropic's AI-Powered CLI](https://www.anthropic.com/)
 - **Argo CD:** [argoproj.github.io/cd](https://argoproj.github.io/cd/)
 
-## Tags
-
-`#OpenShift` `#ClaudeCode` `#AI` `#GitOps` `#ArgoCD` `#cert-manager` `#DevOps` `#Automation` `#Kubernetes` `#LetsEncrypt`
-
 ## Why "Simpsons"?
 
-Couple years back I struggled a lot to find good names for my lab resources and easily remember them later. So I decided to name all my lab resources as Cartoons. I love Simpsons, so decided to name my main cluster as `simpsons`. This cluster has 4 nodes: homer, marge, bart and lisa. The biggest (or fatter) node is obviously Homer. The smarter (which has a GPU) is lisa. And so on. I have another small cluster that sits next to Simpsons, what is its name? Flanders, of course! 
+A couple of years back I struggled a lot to find good names for my lab resources and easily remember them. So I decided to name all my lab resources after cartoons. I love Simpsons, so decided to name my main cluster as `simpsons`. This cluster has 4 nodes: Homer, Marge, Bart and Lisa. The node with more resources - biggest or fatter - is obviously Homer. The smartest (which has a GPU) is Lisa. And so on. I have another small cluster that sits next to Simpsons, what is its name? Flanders, of course!
 
-So, that way I gave names that are meaningful and helps me to remember what they have... and it is also kind of funny! lol
+So, that way I gave names that are meaningful and help me remember what they have... and it is also kind of funny! lol
